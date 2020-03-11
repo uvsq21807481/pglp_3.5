@@ -2,9 +2,9 @@ package uvsq21807481;
 
 public class UneClasseMetier {
 
-    private MessageLog ml;
+    private final MessageLog ml;
 
-    public UneClasseMetier(MessageLog messageL) {
+    public UneClasseMetier(final MessageLog messageL) {
         this.ml = messageL;
     }
 
