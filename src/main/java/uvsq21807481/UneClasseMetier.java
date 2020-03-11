@@ -1,24 +1,25 @@
 package uvsq21807481;
 
-import java.time.LocalDateTime;
+public class UneClasseMetier {
 
-public class UneClasseMetier implements Afficheur {
+    private MessageLog ml;
 
-    public void message(String s) {
-        System.out.println(LocalDateTime.now() + s);
+    public UneClasseMetier(MessageLog messageL) {
+        this.ml = messageL;
     }
 
     public void uneMethodeMetier() {
-        message(": Début de uneMethodeMetier");
+        ml.message(": Début de uneMethodeMetier");
 
         //Traitements
 
-        message(": Fin de uneMethodeMetier");
+        ml.message(": Fin de uneMethodeMetier");
     }
 
     public static void main(String[] args)
     {
-        UneClasseMetier ucm = new UneClasseMetier();
+        MessageLog ml = new MessageLog();
+        UneClasseMetier ucm = new UneClasseMetier(ml);
         ucm.uneMethodeMetier();
     }
 }
